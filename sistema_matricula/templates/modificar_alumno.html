@@ -1,0 +1,10 @@
+<head>
+	<title>Modificar Alumno</title>
+</head>
+{%extends "master.html" %}
+{%block contenido%}
+	<form action="" method="POST">{% csrf_token %}
+		{{f.as_p}}
+		<input type="submit" name="" value="modificar">
+	</form>
+{%endblock contenido%}

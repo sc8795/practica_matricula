@@ -1,0 +1,9 @@
+{% extends "master.html"%}
+{%block contenido%}
+	<br><br>
+	<h5>¿Está seguro de que quiere borrar la materia de <span class="label label-success"> {{materia.nombre_materia}}</span>?
+	<br><br><br>
+	<a href="../validar_eliminar_materia?codigo={{materia.codigo}}" class="btn btn-danger"> Sí, estoy seguro</a>
+	<a href="../../" class="btn btn-success"> Regresar al menú</a>
+</h5>
+{%endblock%}

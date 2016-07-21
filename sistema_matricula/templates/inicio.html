@@ -1,0 +1,50 @@
+<head>
+	<title></title>
+</head>
+{%extends "master.html"%}
+{%block contenido%}
+	<a href="../materia/crear_alumno" class="alert alert-danger alert-dimissible" role="alert">Agregar Alumno<span class="glyphicon glyphicon-user"></span></a>
+	<div class="alert alert-succes">
+		<table class="table table-striped">
+			<h3>Alumnos Registrados</h3>
+			<tr>
+				<td><b>Cedula</b></td>
+				<td><b>Nombre</b></td>
+				<td><b>Apellido</b></td>
+				<td><b>Correo</b></td>
+				<td colspan="2"><b>Operaciones</b></td>
+			</tr>
+			{%for c in lista_alumno%}
+			<tr>
+				<td>{{c.cedula}}</td>
+				<td>{{c.nombre}}</td>
+				<td>{{c.apellido}}</td>
+				<td>{{c.correo}}</td>
+				<td><a href="../materia/modificar_alumno?cedula={{c.cedula}}">Modificar</a></td>
+				<td><a href="../materia/eliminar_alumno?cedula={{c.cedula}}">Eliminar</a></td>
+			</tr>
+			{%endfor%}
+		</table>
+	</div>
+	<a href="../materia/crear_materia" class="alert alert-warning alert-dimissible" role="alert">Agregar Materia<span class="glyphicon glyphicon-book"></span></a><br><br>
+	<div class="alert alert-succes">
+		<table class="table table-striped">
+			<h3>Materias Registradas</h3>
+			<tr>
+				<td><b>Código</b></td>
+				<td><b>Nombre</b></td>
+				<td><b>Número de Cupos</b></td>
+				<td colspan="2"><b>Opciones</b></td>
+			</tr>
+			{%for m in lista_materia%}
+			<tr>
+				<td>{{m.codigo}}</td>
+				<td>{{m.nombre_materia}}</td>
+				<td>{{m.cupo}}</td>
+				<td><a href="../materia/modificar_materia?codigo={{m.codigo}}">Modificar</a></td>
+				<td><a href="../materia/eliminar_materia?codigo={{m.codigo}}">Eliminar</a></td>
+			</tr>
+			{%endfor%}
+		</table>
+	</div>
+{%endblock contenido%}

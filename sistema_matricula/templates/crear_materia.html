@@ -1,0 +1,13 @@
+<head>
+	<title>Crear Alumno</title>
+</head>
+{%extends "master.html"%}
+{%block contenido%}
+	<center>
+		<form action="" method="POST">{% csrf_token %}
+			{{f.as_p}}
+			<input type="submit" name="" value="Registrar Materia">
+		</form>
+	</center>
+	<a href="../../"><span class="btn btn-primary">Regresar</span></a>
+{%endblock contenido%}
